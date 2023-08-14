@@ -1,6 +1,6 @@
 import type { AWS } from '@serverless/typescript';
 
-import starWars from '@functions/star-wars';
+import { getPeopleStarWars, createEmployee, getEmployees } from '@functions/index';
 
 const serverlessConfiguration: AWS = {
   service: 'serverless-aws-node-test',
@@ -16,7 +16,7 @@ const serverlessConfiguration: AWS = {
     },
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
-      NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
+      NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000'
     },
     iam: {
       role: {
@@ -25,6 +25,11 @@ const serverlessConfiguration: AWS = {
             Effect: 'Allow',
             Action: ['translate:*'],
             Resource: '*'
+          },
+          {
+            Effect: 'Allow',
+            Action: ['dynamodb:*'],
+            Resource: 'arn:aws:dynamodb:sa-east-1:460701542542:table/Employees'
           }
         ]
       }
@@ -32,7 +37,32 @@ const serverlessConfiguration: AWS = {
   },
   // import the function via paths
   functions: { 
-    starWars
+    getPeopleStarWars,
+    createEmployee,
+    getEmployees
+  },
+  resources:{
+    Resources: {
+      Employees: {
+        Type: 'AWS::DynamoDB::Table',
+        Properties: {
+          TableName: 'Employees',
+          BillingMode: 'PAY_PER_REQUEST',
+          AttributeDefinitions: [
+            {
+              AttributeName: 'id',
+              AttributeType: 'S'
+            }
+          ],
+          KeySchema: [
+            {
+              AttributeName: 'id',
+              KeyType: 'HASH'
+            }
+          ]
+        },
+      }
+    }
   },
   package: { individually: true },
   custom: {

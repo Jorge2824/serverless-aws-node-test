@@ -1,12 +1,12 @@
 import { handlerPath } from '@libs/handler-resolver';
 
 export default {
-  handler: `${handlerPath(__dirname)}/handler.getPeopleStarWars`,
+  handler: `${handlerPath(__dirname)}/handler.createEmployee`,
   events: [
     {
       http: {
-        method: 'get',
-        path: 'get-people-star-wars',
+        method: 'post',
+        path: 'create-employee',
       },
     },
   ],
