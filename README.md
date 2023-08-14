@@ -58,8 +58,3 @@ Para desplegar tu aplicación en AWS Lambda, utiliza el comando:
   ```
   serverless deploy
   ```
-## Despliegue
-Para desplegar tu aplicación en AWS Lambda, utiliza el comando:
-  ```
-  serverless deploy
-  ```
