@@ -9,7 +9,7 @@ Este es un proyecto Serverless Framework que utiliza el template de `node-aws-ty
 
 ## Instalación
 
-1. Clona este repositorio: `git clone <URL_DEL_REPOSITORIO>`
+1. Clona este repositorio: `git clone https://github.com/Jorge2824/serverless-aws-node-test.git`
 2. Ingresa al directorio del proyecto: `cd serverless-aws-node-test`
 3. Instala las dependencias: `npm install`
 
