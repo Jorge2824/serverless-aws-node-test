@@ -26,6 +26,7 @@ Abre Postman, dale click al MenuBar/File/Import y arrastra el archivo: `aws-node
 ### Ruta POST
 
 - **Endpoint:** `/create-employee`
+![](https://github.com/Jorge2824/serverless-aws-node-test/blob/main/.gifts/CreateEmployee.gif)
 - **Descripción:** Crea un nuevo empleado en la base de datos.
 - **Método:** POST
 - **Cuerpo de la solicitud:**
@@ -41,12 +42,14 @@ Abre Postman, dale click al MenuBar/File/Import y arrastra el archivo: `aws-node
 
 ### Ruta GET (Employees)
 - **Endpoint:** /get-employees
+![](https://github.com/Jorge2824/serverless-aws-node-test/blob/main/.gifts/GetEmployees.gif)
 - **Descripción:** Obtiene la lista de empleados.
 - **Método:** GET
 - **Respuesta exitosa:** Código de estado 200 OK y cuerpo JSON con la lista de empleados.
 
 ### Ruta GET (Integración SWAPI)
 - **Endpoint:** /get-people-star-wars
+![](https://github.com/Jorge2824/serverless-aws-node-test/blob/main/.gifts/GetPeopleStarWars.gif)
 - **Descripción:** Obtiene la lista de personas de Star Wars de la Star Wars API.
 - **Método:** GET
 - **Respuesta exitosa:** Código de estado 200 OK y cuerpo JSON con la lista de personajes.
